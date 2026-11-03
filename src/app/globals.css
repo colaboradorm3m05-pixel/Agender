@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+ * Tokens de design. Cores escolhidas para contraste AA sobre fundo claro.
+ * A página pública usa a cor da marca da empresa (--brand), definida inline.
+ */
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-canvas: #f3f2ee;
+  --color-surface: #ffffff;
+  --color-ink: #17181a;
+  --color-ink-soft: #3d3f44;
+  --color-muted: #5d6068;
+  --color-line: #e5e3dc;
+  --color-line-strong: #cdcac0;
+
+  --color-accent: #0f5c56;
+  --color-accent-hover: #0b4743;
+  --color-accent-soft: #e3f1ee;
+
+  /* Cor de destaque quente (detalhes, ícones, ilustrações). */
+  --color-gold: #a15c07;
+  --color-gold-soft: #fbf0dc;
+
+  /* Menu lateral escuro. */
+  --color-sidebar: #13201e;
+  --color-sidebar-hover: #1d2f2c;
+  --color-sidebar-text: #c9d6d3;
+  --color-sidebar-active: #2a4a45;
+
+  --color-danger: #b42318;
+  --color-danger-soft: #fdecea;
+  --color-warn: #8a5300;
+  --color-warn-soft: #fff4e0;
+  --color-ok: #1f6f3d;
+  --color-ok-soft: #e7f5ec;
+  --color-info: #3b4cb8;
+  --color-info-soft: #eceffd;
+
+  --shadow-card: 0 1px 2px rgb(23 24 26 / 0.04), 0 4px 16px -6px rgb(23 24 26 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(23 24 26 / 0.05), 0 12px 32px -10px rgb(23 24 26 / 0.18);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.35s ease-out both;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Foco visível e consistente para navegação por teclado. */
+:where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
