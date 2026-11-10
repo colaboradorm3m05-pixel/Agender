@@ -1,7 +1,6 @@
 # Agender
 
-SaaS de agendamento e gestão para barbearias, com modelagem preparada para salões, manicures, sobrancelhas e outros serviços de beleza.
-
+SaaS de agendamento e gestão
 > **Agender** é um nome provisório. Para renomear, altere `src/config/app.ts` (ou `NEXT_PUBLIC_APP_NAME`). Não presumimos disponibilidade de marca ou domínio.
 
 ## O que já funciona (MVP)
